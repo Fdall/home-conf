@@ -29,6 +29,9 @@ autocmd FileType make setlocal noexpandtab
 
 """" SYNTAX SETTINGS
 syntax on
+if !isdirectory(expand("~/.vim/syntax"))
+    !mkdir ~/.vim/syntax
+endif
 " cfengine
 if !filereadable(expand("~/.vim/syntax/cf3.vim"))
     !curl -s "https://raw.githubusercontent.com/neilhwatson/vim_cf3/master/syntax/cf3.vim" > ~/.vim/syntax/cf3.vim
